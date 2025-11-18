@@ -1,79 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>alzeem</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alzeem</title>
     <style>
-        body{
-            font-size: 20px;
-            flex-wrap: wrap;
-            background-image: url(diaa/img\(1\).jpg);
-            margin: 200px 500px ;
+        /* --- إعدادات الجسم والخلفية --- */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* يغطي كامل ارتفاع الشاشة */
+            display: flex;
+            justify-content: center; /* محاذاة أفقية للمنتصف */
+            align-items: center;     /* محاذاة عمودية للمنتصف */
+            background: url('diaa/img(1).jpg') no-repeat center center/cover;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* --- تصميم الفورم --- */
+        fieldset {
+            width: 90%;
+            max-width: 500px;
+            padding: 30px 40px;
+            border-radius: 20px;
+            background: url('diaa/img(2).jpg') no-repeat center center/cover;
+            border: 2px solid rgba(255,255,255,0.3);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        legend {
+            font-size: 32px;
+            color: rgb(13, 129, 238);
             text-align: center;
+            padding: 0 10px;
         }
-        fieldset{
-            background-image: url(diaa/img\(2\).jpg);
-            width: 500px;
-            
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 15px;
         }
-        legend{font-size: 30px;color: rgb(13, 129, 238);text-align: center;}
-        a img{
-            width: 60px;
+
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="search"],
+        input[type="file"] {
+            padding: 10px 15px;
+            border-radius: 30px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            padding: 12px;
+            border-radius: 30px;
+            border: none;
+            background-color: rgb(13, 129, 238);
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: rgb(13, 216, 104);
+        }
+
+        /* --- ترتيب الراديو --- */
+        .radio-group {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .radio-group label {
+            margin: 0;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* --- خط فاصل --- */
+        hr {
+            margin: 15px 0;
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+
+        /* --- أيقونات الشبكات --- */
+        .socials {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .socials a img {
+            width: 50px;
             height: 50px;
-            border: 1 solid rgb(117, 27, 27);
-            border-radius: 40px;
-            margin-right: 60px;
-        }fieldset :hover{font-size: 20px;color: rgb(13, 216, 104);}
-        input{margin-top: 20px;border-radius: 40px;}
-        hr{font-size: 40px;}
-        div{background-color: rgb(28, 98, 228);}
+            border-radius: 50%;
+            border: 2px solid #fff;
+            transition: 0.3s;
+        }
+
+        .socials a img:hover {
+            transform: scale(1.2);
+            border-color: rgb(13, 216, 104);
+        }
+
+        /* --- تحسين التوافق مع الهاتف --- */
+        @media (max-width: 480px) {
+            fieldset {
+                padding: 20px;
+            }
+
+            input[type="submit"] {
+                font-size: 16px;
+            }
+
+            legend {
+                font-size: 24px;
+            }
+        }
     </style>
 </head>
 <body>
     <fieldset>
-<legend>GOOgLe</legend>
-<form>
-        <label for="i"> NAME</label>
-        <input id="i" type="text" name="diaa" placeholder="الاسم" required>
-        <br>
-        <label for="t">EMAIL</label>
-        <input type="email" name="diaa" id="t" placeholder="البريد الإكتروني" required>
-        <br>
-        <label for="p">PASSWORD</label>
-        <input type="password" name="diaa" id="p" placeholder="كلمة مرور" required>
-        <br>
-        <label for="s">phone</label>
-        <input type="tel" name="" id="s"  placeholder="رقم الهاتف" required>
-        <br>
-        <label for="m">صباحي</label>
-        <input type="radio" name="diaa" id="m" required>
-        <br>
-        <label for="b">مسائي</label>
-        <input type="radio" name="diaa" id="b" required>
-        <br>
-        <label for="e">تاريخ الميلاد</label>
-        <input type="date" name="diaa" id="e" required>
-        <br>
-        <label for="v">بحث</label>
-        <input type="search" name="" id="V" placeholder="بحث">
-        <br>
-        <input type="file" name="" id="" required>
-        <br>
-        <input type="submit" value="إرسال" >
-        <br>
-        <br>
-        <hr>
-        <div>
-            <a href="717475617/diaa"><img src="diaa/facebook.png" alt=""></a>
-            <a href="https://chrome.google.com/webstore?hl=ar"><img src="diaa/google.png" alt=""></a>
-            <a href="https://wa.me/+967717475617"> <img src="whats.png" alt=""></a>
-            <a href="D:\diaa"><img src="tyoter.jpg" alt=""></a>
-        </div>
-    </form>
+        <legend>GOOgLe</legend>
+        <form>
+            <label for="i">NAME</label>
+            <input id="i" type="text" name="diaa" placeholder="الاسم" required>
+
+            <label for="t">EMAIL</label>
+            <input type="email" name="diaa" id="t" placeholder="البريد الإلكتروني" required>
+
+            <label for="p">PASSWORD</label>
+            <input type="password" name="diaa" id="p" placeholder="كلمة مرور" required>
+
+            <label for="s">Phone</label>
+            <input type="tel" name="" id="s"  placeholder="رقم الهاتف" required>
+
+            <div class="radio-group">
+                <label for="m">صباحي<input type="radio" name="diaa" id="m" required></label>
+                <label for="b">مسائي<input type="radio" name="diaa" id="b" required></label>
+            </div>
+
+            <label for="e">تاريخ الميلاد</label>
+            <input type="date" name="diaa" id="e" required>
+
+            <label for="v">بحث</label>
+            <input type="search" name="" id="V" placeholder="بحث">
+
+            <input type="file" name="" id="" required>
+
+            <input type="submit" value="إرسال">
+
+            <hr>
+
+            <div class="socials">
+                <a href="717475617/diaa"><img src="diaa/facebook.png" alt="Facebook"></a>
+                <a href="https://chrome.google.com/webstore?hl=ar"><img src="diaa/google.png" alt="Google"></a>
+                <a href="717475617/alzeem"><img src="diaa/whats.png" alt="WhatsApp"></a>
+                <a href="D:\diaa"><img src="diaa/tyoter.jpg" alt="Other"></a>
+            </div>
+        </form>
     </fieldset>
 </body>
-
 </html>
-
